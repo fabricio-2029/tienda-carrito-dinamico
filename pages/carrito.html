@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,600;0,700;0,800;1,100;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" /> 
+    <title>Carrito de Compras</title>
+  </head>
+  <body>
+    <header>
+      <div class="div-logo"><a class="logo" href="../index.html">TIENDA</a></div> 
+
+      <nav class="header-nav">
+        <ul>
+          <li>
+            <a href="../index.html">Inicio</a> 
+          </li>
+          <li>
+            <a href="./contacto.html">Contacto</a>
+          </li>
+          <li> 
+            <a href="./carrito.html">Carrito</a>
+            <span id="contador-carrito" class="badge bg-danger">0</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <h1 class="titulo-home text-secondary">Tu Carrito</h1>
+      <p class="parrafo">Aquí están los productos que seleccionaste.</p>
+
+      <section>
+        <div id="contenedor-carrito" class="contenedor-tarjetas"></div>
+        <div id="acciones-carrito"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Encontra todo lo que necesitas para tus proyectos</p>
+      <nav>
+        <ul class="footer-list">
+          <li><img src="../img/whatsapp.png" alt="logo de whatsapp" /></li>
+          <li><img src="../img/social.png" alt="logo de redes" /></li>
+        </ul>
+      </nav>
+    </footer>
+    
+    <script type="module" src="../js/carrito.js"></script>
+  </body>
+</html>
