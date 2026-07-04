@@ -4,7 +4,7 @@
     "nombre": "Arduino",
     "descripcion": "Placa de desarrollo para proyectos de electrónica",
     "precio": 10000,
-    "img": "img/arduino.png"
+    "img": "./img/arduino.png"
 },
 {
   
@@ -12,7 +12,7 @@
     "nombre": "Robotica",
     "descripcion": "Set de componentes para construir robots",
     "precio": 50000,
-    "img": "img/robotica.png"  
+    "img": "./img/robotica.png"  
 },
 {
   
@@ -20,7 +20,7 @@
     "nombre": "Motores DC",
     "descripcion": "Motores de corriente continua para proyectos de electrónica",
     "precio": 9000,
-    "img": "img/motoresDC.png"
+    "img": "./img/motoresDC.png"
 },
 {
   
@@ -28,6 +28,6 @@
     "nombre": "Componentes Avanzados",
     "descripcion": "Descripcion de componentes avanzados",
     "precio": 80000,
-    "img": "img/componentes.png"
+    "img": "./img/componentes.png"
 }
 ]       
