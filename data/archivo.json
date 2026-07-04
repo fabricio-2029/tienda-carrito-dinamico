@@ -12,7 +12,7 @@
     "nombre": "Robotica",
     "descripcion": "Set de componentes para construir robots",
     "precio": 50000,
-    "img": "img/robotica.png"
+    "img": "img/robotica.png"  /*agregado ../img/ Spara que funcione el carrito y contacto*/
 },
 {
   
