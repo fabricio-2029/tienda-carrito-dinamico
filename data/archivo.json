@@ -4,7 +4,7 @@
     "nombre": "Arduino",
     "descripcion": "Placa de desarrollo para proyectos de electrónica",
     "precio": 10000,
-    "img": "arduino.png"
+    "img": "../img/arduino.png"
 },
 {
   
