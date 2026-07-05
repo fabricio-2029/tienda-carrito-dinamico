@@ -1,14 +1,13 @@
 import { obtenercarrito } from "./storage.js";
 import { actualizarcontadorCarrito } from "./ui.js";          
-import { eliminarproducto } from "./funcionescarrito.js";
+import { eliminarproducto } from "./funcionesCarrito.js";
 
+// EL VERDADERO PINTOR
 const renderizarcarrito = () => {  
-    // Buscamos los elementos en el DOM
     const contenedor = document.getElementById("contenedor-carrito");
     const divacciones = document.getElementById("acciones-carrito");
 
-    // PROTECCIÓN: Si no estamos en la página del carrito, 
-    // no intentamos hacer nada y salimos de la función.
+    // Si no estamos en la página del carrito, salimos
     if (!contenedor || !divacciones) {
         return; 
     }
@@ -18,8 +17,9 @@ const renderizarcarrito = () => {
     // Le pasamos el 'carrito' al contador
     actualizarcontadorCarrito(carrito);
 
+    // Limpiamos pantalla
     contenedor.innerHTML = "";
-    divacciones.innerHTML = "";
+    if (divacciones) divacciones.innerHTML = "";
     
     if (!carrito.length) {
         const mensaje = document.createElement("p");
@@ -34,7 +34,11 @@ const renderizarcarrito = () => {
         tarjeta.classList.add("card", "text-dark");         
 
         const img = document.createElement("img");
-        img.src = producto.img; // Asegúrate de que en el JSON se llame 'img'
+        
+        // 👉 ACÁ ESTÁ LA MAGIA PARA LA FOTO ROTA: 
+        // Le agregamos '../' porque estamos en la carpeta 'pages'
+        img.src = "../" + producto.img; 
+        
         img.alt = producto.nombre;  
 
         const titulo = document.createElement("h3");
@@ -44,8 +48,7 @@ const renderizarcarrito = () => {
         precio.textContent = `$${producto.precio}`;
 
         const botonEliminar = document.createElement("button");
-        botonEliminar.classList.add("btn", "btn-danger");
-        botonEliminar.classList.add("btn-eliminar-carrito");
+        botonEliminar.classList.add("btn", "btn-danger", "btn-eliminar-carrito");
         botonEliminar.textContent = "Eliminar producto";
 
         botonEliminar.addEventListener("click", () => {
@@ -59,33 +62,12 @@ const renderizarcarrito = () => {
         tarjeta.appendChild(botonEliminar);
 
         contenedor.appendChild(tarjeta);
-        
-    }); // Cierre forEach
-    
-}; // Cierre renderizarcarrito
+    }); 
+}; 
 
-
-
-
-/// Cambiamos el evento para asegurar que todo el HTML esté cargado
-///document.addEventListener("DOMContentLoaded", () => {
-/////////    console.log("DOM totalmente cargado y analizado"); // <- Esto te aparecerá en la consola
-//    const contenedor = document.getElementById("contenedor-carrito");
-  //  if (contenedor) {
-    //////////    console.log("Contenedor encontrado, renderizando...");
-       /// renderizarcarrito();
-    ///} else {
-       //// console.log("Error: No se encontró el elemento #contenedor-carrito");
-    //}
-////});
-
-
-// js/carrito.js
-
-
-
+// EL ARRANQUE
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. SIEMPRE actualizamos el contador, esté o no el carrito en la página
+    // 1. SIEMPRE actualizamos el contador
     const carrito = obtenercarrito();
     actualizarcontadorCarrito(carrito); 
 

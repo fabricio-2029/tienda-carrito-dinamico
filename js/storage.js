@@ -4,7 +4,7 @@ export const guardarcarrito = (carrito) => {
 }
 export const obtenercarrito = () => {
     const carrito = localStorage.getItem(key);
-    return carrito ? JSON.parse(carrito) : [];
+    return  JSON.parse(localStorage.getItem(key) || []);
 }
 export const vaciarcarritostorage = () => {
     localStorage.removeItem(key);

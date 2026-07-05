@@ -38,7 +38,7 @@ export const vaciarcarrito = () => {
   const carrito = obtenercarrito(); 
   
   // Le pasamos el carrito vacío al contador para que vuelva a 0
-  actualizarcontadorCarrito(carrito);
+  actualizarcontadorCarrito([]);
   
   // Agregamos comillas al texto
   mostrarcarrito("Carrito vaciado");
