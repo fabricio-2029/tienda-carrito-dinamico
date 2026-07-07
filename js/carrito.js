@@ -7,10 +7,7 @@ const renderizarcarrito = () => {
     const contenedor = document.getElementById("contenedor-carrito");
     const divacciones = document.getElementById("acciones-carrito");
 
-    // Si no estamos en la página del carrito, salimos
-    if (!contenedor || !divacciones) {
-        return; 
-    }
+   
 
     const carrito = obtenercarrito();
     
